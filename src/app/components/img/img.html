@@ -1,0 +1,12 @@
+
+@if(img){
+    
+    <img width="200" (load)="imgLoaded()" (error)="imgError()" [src]="img" alt="imganQ" >
+}@else {
+
+    <img width="200" [src]="imageDefault" alt="imagenA">
+}
+
+
+
+
