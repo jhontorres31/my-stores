@@ -1,9 +1,18 @@
 <p>
   <input type="text" [(ngModel)] ='imgParent' />
-</p>
-<app-img (loaded)="onLoaded($event)" [img]="imgParent" />
+</p> 
 
-<hr>
+<button (click)="toggleImg()">Toogle Img</button>
+<p>{{ showImg}}</p>
+
+@if(showImg){
+
+  <app-img (loaded)="onLoaded($event)" [img]="imgParent" />
+}
+
+
+
+<hr />
 
 @for(product of products; track product.id){
 

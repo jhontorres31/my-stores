@@ -16,6 +16,7 @@ export class App {
   protected readonly title = signal('my-stores');
 
   imgParent = '';
+  showImg = true;
   products: ProductModel[] = [
 
      {
@@ -44,6 +45,10 @@ export class App {
 
   }
 
+  toggleImg(){
+
+    this.showImg = !this.showImg;
+  }
   
 }
                                  
