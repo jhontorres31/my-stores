@@ -11,8 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class Img {
 
-    @Input('img')
     img: string = ''; 
+
+    @Input('img')
     set changeImg(newImg: string){
     this.img = newImg;
     console.log('change just img =>' ,this.img);
@@ -22,8 +23,8 @@ export class Img {
   @Input() alt: string = '';
   @Output() loaded = new EventEmitter<string>();
   imageDefault= '/images/descarga.png';
-  public counter = signal(0);
-  public counterFn: any;
+  //public counter = signal(0);
+  //public counterFn: any;
 
 constructor(){
   //before render
@@ -47,24 +48,25 @@ ngOnInit(){
   // antes de renderizarse 
   // aqui podemos correr cosas asyncronas fect, llamadas a api, cosas q esperen un tiempo una sola vez
   
-      this.counterFn = setInterval(() => {
-        this.counter.update(v => v + 1);
-        console.log('run counter');
-      
-  }, 1000);
+  
+  //    this.counterFn = setInterval(() => {
+  //      this.counter.update(v => v + 1);
+  //      console.log('run counter');
+  //    
+  //}, 1000);
 
 }
 
 ngAfterViewInit(){
 
   // despues de que todo este renderizado
-  console.log('ngOnChanges', 'imgValue =>', this.img);
+  console.log('ngAfterViewInit');
 }
 
 ngOnDestroy(){
   // eliminar el componente
-  console.log('ngOnDestroy', 'imgValue =>', this.img);
-  clearInterval(this.counterFn);
+  console.log('ngOnDestroy');
+ // clearInterval(this.counterFn);
 }
 
 
