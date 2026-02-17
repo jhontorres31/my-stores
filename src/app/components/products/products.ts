@@ -10,6 +10,9 @@ import { Product } from '../product/product';
 })
 export class Products {
 
+  myShoppingCart: ProductModel[] = [];
+  total = 0;
+
   products: ProductModel[] = [
 
     {
@@ -37,5 +40,11 @@ export class Products {
       image: 'images/books.jpg'
     },
   ];
+
+  onAddToShoppingCart(product: ProductModel){
+
+    this.myShoppingCart.push(product);
+    this.total = this.myShoppingCart.reduce((sum, item)=> sum + item.precio, 0)
+  }
 
 }
