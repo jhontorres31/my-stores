@@ -13,11 +13,13 @@ export class Product {
   @Input() product: ProductModel = {
     
     id:0,
-    name:'',
-    precio:0,
-    image:''
+    title:'',
+    description:'',
+    price:0,
+    images:[],
+   
 
-  }
+  };
 
   @Output() addedProduct = new EventEmitter<ProductModel>();
 
