@@ -4,6 +4,13 @@
 <p>
   El total es ${{ total }}
 </p>
+<p>
+  Today {{ today | date: 'short' }}
+  Today {{ today | timeAgo }}
+</p>
+<p>
+  Today {{ today | timeAgo }}
+</p>
 <div class="products--grid" >
 @for(product of products; track product.id){
 

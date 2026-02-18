@@ -1,10 +1,12 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { ProductModel } from '../../models/model.product';
+import { CurrencyPipe } from '@angular/common';
 import { Img } from '../img/img';
+import { Highlight } from "../../directives/highlight";
 
 @Component({
   selector: 'app-product',
-  imports: [ Img],
+  imports: [Img, CurrencyPipe, Highlight],
   templateUrl: './product.html',
   styleUrl: './product.scss',
 })
